@@ -29,8 +29,8 @@
         video {
             width: 100%;
             height: auto;
-            border: 10px solid #326FB0; /* Толщина и цвет рамки */
-            border-radius: 20px; /* Скругленные углы */
+            border: 10px solid #326FB0; 
+            border-radius: 20px; 
         }
         #playButton {
             padding: 10px 20px;
@@ -53,7 +53,7 @@
             color: #EFC4Cb;
             margin-top: 20px;
         }
-        /* Стили для гифок */
+        
         .gif-container {
             display: none;
             position: absolute;
@@ -62,10 +62,10 @@
             width: 45%;
         }
         #gifLeft {
-            left: -45%; /* Смещение влево от видео */
+            left: -45%; 
         }
         #gifRight {
-            right: -45%; /* Смещение вправо от видео */
+            right: -45%;
         }
         img {
             width: 100%;
@@ -89,14 +89,14 @@
     </div>
 
     <div id="videoContainer">
-        <!-- Гифки по бокам от видео -->
+        
         <div class="gif-container" id="gifLeft">
             <img src="6mz.gif" alt="Left GIF">
         </div>
         <div class="gif-container" id="gifRight">
             <img src="6mz.gif" alt="Right GIF">
         </div>
-        <!-- Само видео -->
+       
         <video id="video" controls>
             <source src="Culture Beat - Mr Vain (Official Video).mp4" type="video/mp4">
         </video>
@@ -116,18 +116,17 @@
         const gifRight = document.getElementById('gifRight');
 
         playButton.addEventListener('click', () => {
-            playButton.style.display = 'none'; // Скрыть кнопку
-            videoContainer.style.display = 'block'; // Показать видео и гифки
-            gifLeft.style.display = 'block'; // Показать левую гифку
-            gifRight.style.display = 'block'; // Показать правую гифку
-            video.play(); // Воспроизвести видео
+            playButton.style.display = 'none'; 
+            videoContainer.style.display = 'block'; 
+            gifLeft.style.display = 'block'; 
+            gifRight.style.display = 'block'; 
+            video.play(); 
 
-            // Скрыть заголовок и сердечки
+    
             title.style.display = 'none';
             heartsTop.style.display = 'none';
             heartsBottom.style.display = 'none';
 
-            // Показать текст "Just relax for 03:57 min"
             relaxText.style.display = 'block';
         });
     </script>
