@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murmur</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #E06687;
+        }
+        h1 {
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: #EFC4Cb;
+        }
+        #videoContainer {
+            display: none;
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border: 10px solid #326FB0; /* Толщина и цвет рамки */
+            border-radius: 20px; /* Скругленные углы */
+        }
+        #playButton {
+            padding: 10px 20px;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 30px;
+            color: #326FB0;
+            background-color: #EFC4Cb;
+            margin: 20px 0;
+        }
+        .heart {
+            font-size: 43px;
+            color: #326FB0;
+            margin-left: 5px;
+            padding: 2px;
+        }
+        #relaxText {
+            display: none;
+            font-size: 35px;
+            color: #EFC4Cb;
+            margin-top: 20px;
+        }
+        /* Стили для гифок */
+        .gif-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+        }
+        #gifLeft {
+            left: -45%; /* Смещение влево от видео */
+        }
+        #gifRight {
+            right: -45%; /* Смещение вправо от видео */
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Are you tired?</h1>
+    
+    <div class="hearts-container" id="heartsTop">
+        <span class="heart">&#10084;</span>
+        <span class="heart">&#10084;</span>
+    </div> 
+
+    <button id="playButton"><strong>Click here ･ᴗ･</strong></button>
+
+    <div class="hearts-container" id="heartsBottom">
+        <span class="heart">&#10084;</span>
+        <span class="heart">&#10084;</span>
+    </div>
+
+    <div id="videoContainer">
+        <!-- Гифки по бокам от видео -->
+        <div class="gif-container" id="gifLeft">
+            <img src="6mz.gif" alt="Left GIF">
+        </div>
+        <div class="gif-container" id="gifRight">
+            <img src="6mz.gif" alt="Right GIF">
+        </div>
+        <!-- Само видео -->
+        <video id="video" controls>
+            <source src="Culture Beat - Mr Vain (Official Video).mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="relaxText"><strong>Just relax for 03:57 min ⌒‿⌒</strong></div>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const videoContainer = document.getElementById('videoContainer');
+        const video = document.getElementById('video');
+        const title = document.getElementById('title');
+        const heartsTop = document.getElementById('heartsTop');
+        const heartsBottom = document.getElementById('heartsBottom');
+        const relaxText = document.getElementById('relaxText');
+        const gifLeft = document.getElementById('gifLeft');
+        const gifRight = document.getElementById('gifRight');
+
+        playButton.addEventListener('click', () => {
+            playButton.style.display = 'none'; // Скрыть кнопку
+            videoContainer.style.display = 'block'; // Показать видео и гифки
+            gifLeft.style.display = 'block'; // Показать левую гифку
+            gifRight.style.display = 'block'; // Показать правую гифку
+            video.play(); // Воспроизвести видео
+
+            // Скрыть заголовок и сердечки
+            title.style.display = 'none';
+            heartsTop.style.display = 'none';
+            heartsBottom.style.display = 'none';
+
+            // Показать текст "Just relax for 03:57 min"
+            relaxText.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
+
